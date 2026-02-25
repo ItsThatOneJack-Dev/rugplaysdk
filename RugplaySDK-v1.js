@@ -1,14 +1,3 @@
-// ==UserScript==
-// @name         RugplaySDK
-// @namespace    https://itoj.dev
-// @version      1
-// @description  The development draft of the RugplaySDK!
-// @author       ItsThatOneJack
-// @match        *://*.rugplay.com/*
-// @icon         https://www.google.com/s2/favicons?sz=64&domain=rugplay.com
-// @grant        none
-// ==/UserScript==
-
 /////////////////////////////////
 // Define the RugplaySDK objects.
 /////////////////////////////////
@@ -537,3 +526,4 @@ window.rugplaySDK.events = {
         });
     },
 };
+
