@@ -1,11 +1,13 @@
 // ==UserScript==
 // @name         RugplaySDK
 // @namespace    https://itoj.dev
-// @version      1
+// @version      1.2
 // @description  The development draft of the RugplaySDK!
 // @author       ItsThatOneJack
 // @match        *://*.rugplay.com/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=rugplay.com
+// @updateURL    https://raw.githubusercontent.com/ItsThatOneJack-Dev/rugplaysdk/refs/heads/main/RugplaySDK.user.js
+// @downloadURL  https://raw.githubusercontent.com/ItsThatOneJack-Dev/rugplaysdk/refs/heads/main/RugplaySDK.user.js
 // @grant        none
 // ==/UserScript==
 
