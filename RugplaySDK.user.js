@@ -46,7 +46,7 @@ window.rugplaySDK.helpers.resolveCoinAmount = async function (
                 "RugplaySDK: Invalid sentinel object passed as amount — missing __percent.",
             );
         if (amount.__percent === 0) return 0;
-        const held = await window.rugplaySDK.getHoldingAmount(coinSymbol);
+        const held = await window.rugplaySDK.getHeldAmount(coinSymbol);
         return held * (amount.__percent / 100);
     }
     return amount;
@@ -288,7 +288,7 @@ window.rugplaySDK.getHoldings = async function () {
     return holdings;
 };
 
-window.rugplaySDK.getHoldingAmount = async function (coinSymbol) {
+window.rugplaySDK.getHeldAmount = async function (coinSymbol) {
     const holdings = await window.rugplaySDK.getHoldings();
     if (!holdings) return 0;
     return holdings[coinSymbol.toUpperCase()]?.quantity ?? 0;
