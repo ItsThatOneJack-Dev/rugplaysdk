@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+        "target": "ESNext",
+        "module": "ESNext",
+        "moduleResolution": "bundler",
+        "strict": true,
+        "lib": ["ESNext", "DOM"],
+        "types": ["tampermonkey"],
+        "paths": {
+            "https://esm.sh/*": ["./src/types/esm-shim.d.ts"]
+        }
+    }
+}

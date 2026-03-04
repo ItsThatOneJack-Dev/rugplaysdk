@@ -1,0 +1,33 @@
+{
+    "name": "rugplaysdk",
+    "version": "2.0.0",
+    "description": "The RugplaySDK, fully automated actions on Rugplay! Gambling, trading and more, at your fingertips!",
+    "main": "server.js",
+    "type": "module",
+    "exports": {
+        ".": "./Revamp/dist/rugplaySDK.server.js"
+    },
+    "keywords": [
+        "rugplay",
+        "sdk"
+    ],
+    "author": "ItsThatOneJack",
+    "license": "GPL-3.0-or-later",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ItsThatOneJack/RugplaySDK.git"
+    },
+    "devDependencies": {
+        "@types/bun": "latest",
+        "@types/tampermonkey": "^5.0.5"
+    },
+    "peerDependencies": {
+        "typescript": "^5.9.3"
+    },
+    "scripts": {
+        "build": "bun run build.ts"
+    },
+    "dependencies": {
+        "devalue": "^5.6.3"
+    }
+}
