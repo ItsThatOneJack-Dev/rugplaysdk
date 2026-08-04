@@ -1,6 +1,6 @@
 {
     "name": "rugplaysdk",
-    "version": "2.0.0",
+    "version": "2.0.1",
     "description": "The RugplaySDK, fully automated actions on Rugplay! Gambling, trading and more, at your fingertips!",
     "main": "server.js",
     "type": "module",

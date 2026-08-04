@@ -5,18 +5,10 @@ import { baseUrl } from "../helpers/baseURL";
 
 declare const GM_info: { script: { version: string } } | undefined;
 
-const VERSION = "2";
+const VERSION = "2.0.1";
 const CHANGELOG = `
-v2.0.0
-- Full TypeScript rewrite
-- User, Coin, Channel, Message, RugpayRequest classes
-- Chat and Events WebSocket systems with auto-reconnect and backoff
-- Shop, Arcade, Hopium, Leaderboard, DailyReward systems
-- Achievement sentinels and helpers
-- Backoff helpers (linear, exponential, logarithmic, stepped, custom)
-- HTML sanitisation helpers
-- Server-side support via ServerAuth
-- Dual ESM/CJS/userscript build output
+v2.0.1
+- Add autoupdate headers.
 `.trim();
 
 class InfoSingleton {

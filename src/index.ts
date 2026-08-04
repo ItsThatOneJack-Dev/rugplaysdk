@@ -35,6 +35,13 @@ import { Hopium } from "./classes/Hopium";
 import { escapeHTML, sanitiseHTML } from "./helpers/sanitise";
 import { Info } from "./classes/Info";
 import { towerDifficulty } from "./classes/towerDifficulty";
+import {
+    SortBy,
+    SortOrder,
+    PriceFilter,
+    ChangeFilter,
+    getTopCoins,
+} from "./classes/market";
 
 declare global {
     interface Window {
@@ -57,6 +64,11 @@ export const rugplaySDK = {
         customBackoff,
         escapeHTML,
         sanitiseHTML,
+        getTopCoins,
+        SortBy,
+        SortOrder,
+        PriceFilter,
+        ChangeFilter,
     },
     isLoggedIn,
     percent,

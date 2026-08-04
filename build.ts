@@ -3,7 +3,7 @@ import { build } from "bun";
 const userscriptHeader = `// ==UserScript==
 // @name         RugplaySDK (RPSDK$)
 // @namespace    https://itoj.dev
-// @version      2.0
+// @version      2.0.1
 // @description  RugplaySDK
 // @author       ItsThatOneJack
 // @match        *://*.rugplay.com/*
