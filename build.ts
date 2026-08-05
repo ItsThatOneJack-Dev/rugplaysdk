@@ -16,6 +16,28 @@ const userscriptHeader = `// ==UserScript==
 const baseDomainDefinition =
     'const BASE_DOMAIN = "rugplay.com";\nconst BASE_WS_DOMAIN = "ws."+BASE_DOMAIN;\n\n';
 
+async function generateDts(entry: string, outFile: string) {
+    const proc = Bun.spawn(
+        [
+            "bunx",
+            "dts-bundle-generator",
+            "--project",
+            "tsconfig.json",
+            "-o",
+            outFile,
+            entry,
+        ],
+        { stdout: "inherit", stderr: "inherit" },
+    );
+    const exitCode = await proc.exited;
+    if (exitCode !== 0) {
+        throw new Error(
+            `dts-bundle-generator failed for ${entry} (exit ${exitCode})`,
+        );
+    }
+    console.log(`Built ${outFile}`);
+}
+
 // Userscript build
 await build({
     entrypoints: ["src/index.ts"],
@@ -45,3 +67,18 @@ await build({
 const serverOut = await Bun.file("dist/rugplaySDK.server.js").text();
 await Bun.write("dist/rugplaySDK.server.js", baseDomainDefinition + serverOut);
 console.log("Built dist/rugplaySDK.server.js");
+
+// ESM build
+await build({
+    entrypoints: ["src/index.ts"],
+    outdir: "dist",
+    naming: "rugplaySDK.esm.js",
+    target: "browser",
+    format: "esm",
+    external: ["https://esm.sh/*"],
+});
+console.log("Built dist/rugplaySDK.esm.js");
+
+// Type declarations (bundled, one file per target)
+await generateDts("src/index.ts", "dist/rugplaySDK.user.d.ts");
+await generateDts("src/index.server.ts", "dist/rugplaySDK.server.d.ts");

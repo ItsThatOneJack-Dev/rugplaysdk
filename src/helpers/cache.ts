@@ -1,11 +1,11 @@
 const TTL = 5 * 60 * 1000; // 5 minutes
 
-interface CacheEntry<T> {
+export interface CacheEntry<T> {
     value: T;
     cachedAt: number;
 }
 
-class Cache {
+export class Cache {
     private _store: Map<string, CacheEntry<unknown>> = new Map();
     private _enabled: boolean = true;
 

@@ -21,7 +21,7 @@ import { redeemPromoCode } from "./helpers/redeemPromoCode";
 import { Arcade } from "./classes/Arcade";
 import { achievements } from "./classes/achievements";
 import { computeLevenshteinDistance } from "./helpers/computeLevenshteinDistance";
-import { warn } from "./helpers/log";
+import { warn, error, log, info } from "./helpers/log";
 import {
     linearBackoff,
     exponentialBackoff,
@@ -69,6 +69,10 @@ export const rugplaySDK = {
         SortOrder,
         PriceFilter,
         ChangeFilter,
+        warn,
+        error,
+        log,
+        info,
     },
     isLoggedIn,
     percent,
@@ -92,6 +96,7 @@ export const rugplaySDK = {
     info: Info,
     towerDifficulty,
 };
+export const RPSDK$ = rugplaySDK;
 
 export type RugplaySDK = typeof rugplaySDK;
 

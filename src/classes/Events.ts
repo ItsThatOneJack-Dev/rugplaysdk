@@ -53,7 +53,7 @@ type TradeEvents = BaseWSEvents & {
     arcadeActivity: [ArcadeActivityEvent];
 };
 
-class EventsSingleton extends WSConnection<TradeEvents> {
+export class EventsSingleton extends WSConnection<TradeEvents> {
     get wsUrl(): string {
         return WS_URL;
     }

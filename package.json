@@ -5,7 +5,11 @@
     "main": "server.js",
     "type": "module",
     "exports": {
-        ".": "./Revamp/dist/rugplaySDK.server.js"
+        ".": "./Revamp/dist/rugplaySDK.server.js",
+        "./browser": {
+            "types": "./dist/rugplaySDK.user.d.ts",
+            "default": "./dist/rugplaySDK.esm.js"
+        }
     },
     "keywords": [
         "rugplay",
@@ -19,7 +23,8 @@
     },
     "devDependencies": {
         "@types/bun": "latest",
-        "@types/tampermonkey": "^5.0.5"
+        "@types/tampermonkey": "^5.0.5",
+        "dts-bundle-generator": "^9.5.1"
     },
     "peerDependencies": {
         "typescript": "^5.9.3"

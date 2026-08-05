@@ -33,7 +33,7 @@ type ChatEvents = BaseWSEvents & {
     rugpayCompleted: [RugpayRequest];
 };
 
-class ChatSingleton extends WSConnection<ChatEvents> {
+export class ChatSingleton extends WSConnection<ChatEvents> {
     get wsUrl(): string {
         return WS_URL;
     }
